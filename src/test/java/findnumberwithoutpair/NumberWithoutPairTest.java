@@ -16,7 +16,7 @@ class NumberWithoutPairTest {
 
     private static Stream<Arguments> test_findNumberWithoutPair() {
         return Stream.of(
-                Arguments.of( List.of(1, 2, 3, 4, 5, 1, 2, 3, 4, 5, 7), 7)
+                Arguments.of( List.of(1, 2, 3, 4, 7, 5, 1, 2, 3, 4, 5), 7)
         );
     }
 
