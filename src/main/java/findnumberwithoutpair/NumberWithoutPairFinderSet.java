@@ -4,11 +4,12 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-public class NumberWithoutPair {
+public class NumberWithoutPairFinderSet implements NumberWithoutPairFinder {
 
     private Set<Integer> uniqueSet = new HashSet<>();
 
-    Integer findNumberWithoutPair(List<Integer> numbers) {
+    @Override
+    public Integer findNumberWithoutPair(List<Integer> numbers) {
 
         for (Integer number : numbers) {
             if (uniqueSet.contains(number)) {
