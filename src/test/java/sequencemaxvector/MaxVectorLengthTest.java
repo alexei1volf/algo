@@ -22,7 +22,7 @@ class MaxVectorLengthTest {
     private static Stream<Arguments> findMaxVectorLength() {
         return Stream.of(
                 Arguments.of( List.of(1, 1, 1, 0, 0, 1, 1, 0, 0, 0, 1), 3),
-                Arguments.of( List.of(1, 1, 1, 1, 1), 5),
+                Arguments.of( List.of(0, 1, 1, 1, 1, 1), 5),
                 Arguments.of( List.of(0, 0, 0), 0),
                 Arguments.of( List.of(1, 0), 1),
                 Arguments.of( List.of(1), 1),
