@@ -3,14 +3,26 @@ package squareroot;
 public class Square {
 
     int getSquare(int input) {
-        int res = input;
-        while (res * res >= input) {
-            if (res * res > input) {
-                res = res / 2;
+        int left = 0;
+        int right = input;
+
+        if (input == 1) {
+            return input;
+        }
+
+        while (left <= right) {
+            int mid = left + (right - left) / 2;
+            int squareMid = mid * mid;
+            if (squareMid == input) {
+                return mid;
+            }
+            if (squareMid > input) {
+                right = mid;
             } else {
-                res = res - 1;
+                left = mid;
             }
         }
-        return res;
+
+        return -1;
     }
 }
