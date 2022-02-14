@@ -9,7 +9,7 @@ import java.util.stream.Stream;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-class NumberWithoutPairFinderTest {
+class NumberWithoutNodeWithDepthFinderTest {
 
     private List<NumberWithoutPairFinder> numberWithoutPairFinders = List.of(
             new NumberWithoutPairFinderSet(),

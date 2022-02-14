@@ -1,5 +1,7 @@
 package maxtreebrunchsum;
 
+import datastructure.Node;
+
 class Tree {
 
     private Node node;
@@ -18,6 +20,5 @@ class Tree {
             value = tree.value + Math.max(findMaxBrunchSum(tree.left), findMaxBrunchSum(tree.right));
         }
         return value;
-
     }
 }
