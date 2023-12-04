@@ -22,7 +22,7 @@ public class EquationWithSquareRoot
     public static List<String> calculate(int a, int b, int c) {
         List<String> result = new ArrayList<>();
         if (a > 0 && b > 0 && c < 0) {
-            result.add("NO SOLUTIONS");
+            result.add("NO SOLUTION");
             return result;
         }
         if (b == 0 && c == 0) {

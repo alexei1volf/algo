@@ -36,7 +36,7 @@ class EquationWithSquareRootTest
     }
 
     @Test
-    void should_return_no_solutions()
+    void should_return_no_solution()
     {
         int a = 1;
         int b = 2;
@@ -44,7 +44,7 @@ class EquationWithSquareRootTest
 
         List<String> result = equation.calculate(a, b, c);
 
-        assertEquals("NO SOLUTIONS", result.get(0));
+        assertEquals("NO SOLUTION", result.get(0));
     }
 
     @Test
