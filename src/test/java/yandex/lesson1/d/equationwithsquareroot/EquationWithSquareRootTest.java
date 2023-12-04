@@ -68,6 +68,6 @@ class EquationWithSquareRootTest
 
         List<String> result = equation.calculate(a, b, c);
 
-        assertEquals("0", result.get(0));
+        assertEquals("MANY SOLUTIONS", result.get(0));
     }
 }
