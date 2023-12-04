@@ -1,8 +1,17 @@
-package yandex.lesson1.conditioner;
+package yandex.lesson1.a.conditioner;
+
+import java.util.Scanner;
 
 public class Conditioner
 {
-    public String getTemp(String tempPair, String mode) {
+    public static void main(String[]args)
+    {
+        Scanner sc = new Scanner(System.in);
+        String temp = getTemp(sc.nextLine(), sc.nextLine());
+        System.out.println(temp);
+    }
+
+    public static String getTemp(String tempPair, String mode) {
         String[] s = tempPair.split(" ");
         String tCurrent = s[0];
         String tExpected = s[1];

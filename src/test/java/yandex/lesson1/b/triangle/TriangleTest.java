@@ -1,4 +1,4 @@
-package yandex.lesson1.triangle;
+package yandex.lesson1.b.triangle;
 
 import org.junit.jupiter.api.Test;
 

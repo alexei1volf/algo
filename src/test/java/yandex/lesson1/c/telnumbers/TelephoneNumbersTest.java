@@ -1,10 +1,8 @@
-package yandex.lesson1.telnumbers;
+package yandex.lesson1.c.telnumbers;
 
-import org.assertj.core.api.Assert;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.junit.jupiter.api.Assertions.*;
 
 class TelephoneNumbersTest
 {

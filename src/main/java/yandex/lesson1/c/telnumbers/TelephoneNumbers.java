@@ -1,4 +1,4 @@
-package yandex.lesson1.telnumbers;
+package yandex.lesson1.c.telnumbers;
 
 import javax.swing.*;
 import java.util.List;

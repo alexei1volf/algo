@@ -1,4 +1,4 @@
-package yandex.lesson1.conditioner;
+package yandex.lesson1.a.conditioner;
 
 import org.junit.jupiter.api.Test;
 
