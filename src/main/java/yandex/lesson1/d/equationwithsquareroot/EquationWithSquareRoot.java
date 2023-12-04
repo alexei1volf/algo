@@ -35,11 +35,9 @@ public class EquationWithSquareRoot
             return result;
         }
 
-        for (int i = 0; i < Integer.MAX_VALUE; i ++) {
-            if ((a * i) + b == c * c) {
-               result.add(String.valueOf(i));
-            }
-        }
+        int x = ((c * c) - b) / a;
+        result.add(String.valueOf(x));
+
         return result;
     }
 }
