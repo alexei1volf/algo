@@ -2,6 +2,8 @@ package yandex.lesson1.d.equationwithsquareroot;
 
 import org.junit.jupiter.api.Test;
 
+import java.util.List;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class EquationWithSquareRootTest
@@ -16,9 +18,9 @@ class EquationWithSquareRootTest
         int b = 0;
         int c = 0;
 
-        String result = equation.calculate(a, b, c);
+        List<String> result = equation.calculate(a, b, c);
 
-        assertEquals(0, Integer.valueOf(result));
+        assertEquals(0, Integer.valueOf(result.get(0)));
     }
 
     @Test
@@ -28,9 +30,9 @@ class EquationWithSquareRootTest
         int b = 2;
         int c = 3;
 
-        String result = equation.calculate(a, b, c);
+        List<String> result = equation.calculate(a, b, c);
 
-        assertEquals(7, Integer.valueOf(result));
+        assertEquals(7, Integer.valueOf(result.get(0)));
     }
 
     @Test
@@ -40,9 +42,9 @@ class EquationWithSquareRootTest
         int b = 2;
         int c = -3;
 
-        String result = equation.calculate(a, b, c);
+        List<String> result = equation.calculate(a, b, c);
 
-        assertEquals("NO SOLUTIONS", result);
+        assertEquals("NO SOLUTIONS", result.get(0));
     }
 
     @Test
@@ -52,9 +54,9 @@ class EquationWithSquareRootTest
         int b = 2;
         int c = 3;
 
-        String result = equation.calculate(a, b, c);
+        List<String> result = equation.calculate(a, b, c);
 
-        assertEquals("MANY SOLUTIONS", result);
+        assertEquals("MANY SOLUTIONS", result.get(0));
     }
 
     @Test
@@ -64,8 +66,8 @@ class EquationWithSquareRootTest
         int b = 0;
         int c = 0;
 
-        String result = equation.calculate(a, b, c);
+        List<String> result = equation.calculate(a, b, c);
 
-        assertEquals("0", result);
+        assertEquals("0", result.get(0));
     }
 }

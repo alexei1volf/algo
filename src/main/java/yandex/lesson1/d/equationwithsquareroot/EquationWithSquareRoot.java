@@ -1,5 +1,7 @@
 package yandex.lesson1.d.equationwithsquareroot;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class EquationWithSquareRoot
@@ -10,22 +12,34 @@ public class EquationWithSquareRoot
         int a = sc.nextInt();
         int b = sc.nextInt();
         int c = sc.nextInt();
-        System.out.println(calculate(a, b, c));
+        List<String> calculate = calculate(a, b, c);
+        for (String s : calculate)
+        {
+            System.out.println(s);
+        }
     }
 
-    public static String calculate(int a, int b, int c) {
+    public static List<String> calculate(int a, int b, int c) {
+        List<String> result = new ArrayList<>();
         if (c < 0) {
-            return "NO SOLUTIONS";
+            result.add("NO SOLUTIONS");
+            return result;
         }
         if (b == 0 && c == 0) {
-            return "0";
+            result.add("0");
+            return result;
         }
 
         if (a == 0) {
-            return "MANY SOLUTIONS";
+            result.add("MANY SOLUTIONS");
+            return result;
         }
 
-        int result = ((c * c) - b) / a;
-        return String.valueOf(result);
+        for (int i = 0; i < Integer.MAX_VALUE; i ++) {
+            if ((a * i) + b == c * c) {
+               result.add(String.valueOf(i));
+            }
+        }
+        return result;
     }
 }
