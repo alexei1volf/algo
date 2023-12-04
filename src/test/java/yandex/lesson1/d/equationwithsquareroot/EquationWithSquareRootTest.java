@@ -56,4 +56,16 @@ class EquationWithSquareRootTest
 
         assertEquals("MANY SOLUTIONS", result);
     }
+
+    @Test
+    void should_return_all_zero()
+    {
+        int a = 0;
+        int b = 0;
+        int c = 0;
+
+        String result = equation.calculate(a, b, c);
+
+        assertEquals("0", result);
+    }
 }

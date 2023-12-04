@@ -17,6 +17,10 @@ public class EquationWithSquareRoot
         if (c < 0) {
             return "NO SOLUTIONS";
         }
+        if (b == 0 && c == 0) {
+            return "0";
+        }
+
         if (a == 0) {
             return "MANY SOLUTIONS";
         }
