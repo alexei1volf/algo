@@ -13,7 +13,7 @@ class TelephoneNumbersTest
     {
         //given
         String newNumber = "8(495)430-23-97";
-        String existingNumbers = "8(495)430-23-97 8(495)430-23-97 8(495)430-23-97";
+        String[] existingNumbers = new String[] {"8(495)430-23-97", "8(495)430-23-97", "8(495)430-23-97"};
 
         //when
         String[] result = telephoneNumbers.add(newNumber, existingNumbers);
@@ -28,7 +28,7 @@ class TelephoneNumbersTest
     {
         //given
         String newNumber = "8(495)430-23-97";
-        String existingNumbers = "8(495)430-23-95 8(495)430-23-97 8(495)430-23-96";
+        String[] existingNumbers = new String[] {"8(495)430-23-95", "8(495)430-23-97", "8(495)430-23-96"};
 
         //when
         String[] result = telephoneNumbers.add(newNumber, existingNumbers);
@@ -43,7 +43,7 @@ class TelephoneNumbersTest
     {
         //given
         String newNumber = "8(495)430-23-97";
-        String existingNumbers = "+7(495)430-23-97 +7(495)430-23-97 +7(495)430-23-97";
+        String[] existingNumbers = new String[] {"+7(495)430-23-97", "+7(495)430-23-97", "+7(495)430-23-97"};
 
         //when
         String[] result = telephoneNumbers.add(newNumber, existingNumbers);
@@ -58,7 +58,7 @@ class TelephoneNumbersTest
     {
         //given
         String newNumber = "8495430-23-97";
-        String existingNumbers = "+7(495)430-23-97 +7(495)430-23-97 +7(495)430-23-97";
+        String[] existingNumbers = new String[] {"+7(495)430-23-97", "+7(495)430-23-97", "+7(495)430-23-97"};
 
         //when
         String[] result = telephoneNumbers.add(newNumber, existingNumbers);
@@ -73,7 +73,7 @@ class TelephoneNumbersTest
     {
         //given
         String newNumber = "+7-4-9-5-4-3-0-23-97";
-        String existingNumbers = "+7(495)430-23-97 +7(495)43-0-23-97 +7(495)430239-7";
+        String[] existingNumbers = new String[] {"+7(495)430-23-97", "+7(495)43-0-23-97", "+7(495)430239-7"};
 
         //when
         String[] result = telephoneNumbers.add(newNumber, existingNumbers);
@@ -88,7 +88,7 @@ class TelephoneNumbersTest
     {
         //given
         String newNumber = "4-3-0-23-97";
-        String existingNumbers = "+7(495)430-23-97 +7(495)43-0-23-97 +7(495)430239-7";
+        String[] existingNumbers = new String[] {"+7(495)430-23-97", "+7(495)43-0-23-97", "+7(495)430239-7"};
 
         //when
         String[] result = telephoneNumbers.add(newNumber, existingNumbers);

@@ -2,16 +2,30 @@ package yandex.lesson1.c.telnumbers;
 
 import javax.swing.*;
 import java.util.List;
+import java.util.Scanner;
 
 public class TelephoneNumbers
 {
 
-    public String[] add(String newNumber, String existingNumbers)
+    public static void main(String[]args)
+    {
+        Scanner sc = new Scanner(System.in);
+        String newNumber = sc.nextLine();
+        String[] existingNumbers = new String[3];
+        existingNumbers[0] = sc.nextLine();
+        existingNumbers[1] = sc.nextLine();
+        existingNumbers[2] = sc.nextLine();
+        String[] result = add(newNumber, existingNumbers);
+        System.out.println(result[0]);
+        System.out.println(result[1]);
+        System.out.println(result[2]);
+    }
+
+    public static String[] add(String newNumber, String[] existingNumbers)
     {
         String[] result = new String[3];
-        String[] existingNumbersArr = existingNumbers.split(" ");
-        for (int i = 0; i < existingNumbersArr.length; i++) {
-            boolean compare = compare(newNumber, existingNumbersArr[i]);
+        for (int i = 0; i < existingNumbers.length; i++) {
+            boolean compare = compare(newNumber, existingNumbers[i]);
             if (compare) {
                 result[i] = "YES";
             } else {
@@ -21,13 +35,13 @@ public class TelephoneNumbers
         return result;
     }
 
-    private boolean compare(String first, String second) {
+    private static boolean compare(String first, String second) {
         String firstReplaced = replace(first);
         String secondReplaced = replace(second);
         return firstReplaced.equals(secondReplaced);
     }
 
-    private String replace(String number)
+    private static String replace(String number)
     {
         String numberReplaced = number.replace("-", "").replace("(", "").replace(")", "");
         if (numberReplaced.length() == 7) {
