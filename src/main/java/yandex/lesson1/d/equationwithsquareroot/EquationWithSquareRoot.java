@@ -26,7 +26,11 @@ public class EquationWithSquareRoot
             return result;
         }
         if (a == 0) {
-            result.add("MANY SOLUTIONS");
+            if (b == c * c) {
+                result.add("MANY SOLUTIONS");
+            } else {
+                result.add("NO SOLUTION");
+            }
             return result;
         }
 
