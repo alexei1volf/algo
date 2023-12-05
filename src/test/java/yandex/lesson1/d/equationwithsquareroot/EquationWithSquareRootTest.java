@@ -83,4 +83,16 @@ class EquationWithSquareRootTest
         assertEquals("NO SOLUTION", result.get(0));
     }
 
+    @Test
+    void should_return_no_solution_all_negative()
+    {
+        int a = -100;
+        int b = -100;
+        int c = -100;
+
+        List<String> result = equation.calculate(a, b, c);
+
+        assertEquals("NO SOLUTION", result.get(0));
+    }
+
 }

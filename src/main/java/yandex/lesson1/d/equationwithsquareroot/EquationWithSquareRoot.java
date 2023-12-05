@@ -37,7 +37,7 @@ public class EquationWithSquareRoot
         int x = ((c * c) - b) / a;
 
         boolean isMatch = ((a * x) + b) == c * c;
-        if (!isMatch) {
+        if (!isMatch || x < 0) {
             result.add("NO SOLUTION");
             return result;
         }
