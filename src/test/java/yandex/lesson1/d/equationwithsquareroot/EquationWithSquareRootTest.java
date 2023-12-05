@@ -70,4 +70,17 @@ class EquationWithSquareRootTest
 
         assertEquals("NO SOLUTION", result.get(0));
     }
+
+    @Test
+    void should_return_no_solution()
+    {
+        int a = 10;
+        int b = 3;
+        int c = 4;
+
+        List<String> result = equation.calculate(a, b, c);
+
+        assertEquals("NO SOLUTION", result.get(0));
+    }
+
 }
