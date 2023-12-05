@@ -48,6 +48,18 @@ class EquationWithSquareRootTest
     }
 
     @Test
+    void should_return_no_solution_a_and_b_is_neg()
+    {
+        int a = -1;
+        int b = -1;
+        int c = 1;
+
+        List<String> result = equation.calculate(a, b, c);
+
+        assertEquals(-2, Integer.valueOf(result.get(0)));
+    }
+
+    @Test
     void should_return_all_zero()
     {
         int a = 0;

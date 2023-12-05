@@ -21,7 +21,7 @@ public class EquationWithSquareRoot
 
     public static List<String> calculate(int a, int b, int c) {
         List<String> result = new ArrayList<>();
-        if (a > 0 && b > 0 && c < 0) {
+        if (c < 0) {
             result.add("NO SOLUTION");
             return result;
         }
@@ -35,12 +35,13 @@ public class EquationWithSquareRoot
         }
 
         int x = ((c * c) - b) / a;
-
         boolean isMatch = ((a * x) + b) == c * c;
-        if (!isMatch || x < 0) {
+
+        if (!isMatch) {
             result.add("NO SOLUTION");
             return result;
         }
+
 
         result.add(String.valueOf(x));
 
