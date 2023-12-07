@@ -38,23 +38,35 @@ public class Laptops
         }
 
         int maxWidth;
+        int minWidth;
         if (width1 > width2) {
             maxWidth = width1;
+            minWidth = width2;
         } else {
             maxWidth = width2;
+            minWidth = width1;
+        }
+
+        int maxLength;
+        int minLength;
+        if (length1 > length2) {
+            maxLength = length1;
+            minLength = length2;
+        } else {
+            maxLength = length2;
+            minLength = length1;
         }
 
         int totalLength1 = length1 + length2;
         int totalWidth1 = maxWidth;
         int sq1 = totalLength1 * totalWidth1;
 
-        int totalLength2 = length1 + width2;
-
+        int totalLength2 = maxLength + minWidth;
         int totalWidth2;
-        if (maxWidth > length2) {
+        if (maxWidth > minLength) {
             totalWidth2 = maxWidth;
         } else {
-            totalWidth2 = length2;
+            totalWidth2 = minLength;
         }
 
         int sq2 = totalLength2 * totalWidth2;

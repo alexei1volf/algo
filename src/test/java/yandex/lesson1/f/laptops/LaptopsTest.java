@@ -35,4 +35,19 @@ class LaptopsTest
         assertEquals(9, l);
         assertEquals(5, w);
     }
+
+    @Test
+    void test_findTableSize_case3() {
+        int a1 = 3;
+        int b1 = 2;
+        int a2 = 5;
+        int b2 = 7;
+
+        int[] result = Laptops.findTableSize(a1, b1, a2, b2);
+
+        int l = result[0];
+        int w = result[1];
+        assertEquals(9, l);
+        assertEquals(5, w);
+    }
 }
