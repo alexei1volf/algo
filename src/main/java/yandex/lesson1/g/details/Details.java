@@ -17,6 +17,11 @@ public class Details
     public static int findDetails(int n, int k, int m) {
         int met = n;
         int det = 0;
+
+        if (m > k) {
+            return det;
+        }
+
         while (met / k > 0) {
             int met1 = met % k;
             int zag = met / k;

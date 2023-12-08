@@ -42,4 +42,26 @@ class DetailsTest
 
         assertEquals(4, result);
     }
+
+    @Test
+    void test_findDetails_case14() {
+        int n = 30;
+        int k = 5;
+        int m = 7;
+
+        int result = Details.findDetails(n, k, m);
+
+        assertEquals(0, result);
+    }
+
+    @Test
+    void test_findDetails_case14_my() {
+        int n = 10;
+        int k = 20;
+        int m = 5;
+
+        int result = Details.findDetails(n, k, m);
+
+        assertEquals(0, result);
+    }
 }
