@@ -12,8 +12,13 @@ public class Metro
         int n = sc.nextInt();
         int m = sc.nextInt();
         int[] interval = findInterval(a, b, n, m);
-        System.out.println(interval[0]);
-        System.out.println(interval[1]);
+
+        if (interval.length > 1) {
+            System.out.println(interval[0]);
+            System.out.println(interval[1]);
+        } else {
+            System.out.println(interval[0]);
+        }
     }
 
     public static int[] findInterval(int a, int b, int n, int m) {
