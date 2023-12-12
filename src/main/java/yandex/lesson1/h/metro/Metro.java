@@ -22,21 +22,18 @@ public class Metro
     }
 
     public static int[] findInterval(int a, int b, int n, int m) {
-        int i1 = (a * n) + (n - 1);
-        int i2 = (b * m) + (m - 1);
+        int min1 = n + (n - 1) * a;
+        int min2 = m + (m - 1) * b;
+        int min = Math.max(min1, min2);
 
-        int p2 = m + (m - 1) * b;
-        if (i1 < p2) {
+        int max1 = min1 + 2 * a;
+        int max2 = min2 + 2 * b;
+        int max = Math.min(max1, max2);
+
+        if (min > max) {
             return new int[] {-1};
         }
 
-        int p1 = n + (n - 1) * a;
-        if (i2 < p1) {
-            return new int[] {-1};
-        }
-
-        int min = Math.min(i1, i2);
-        int max = Math.max(i1, i2);
         return new int[] {min, max};
     }
 
