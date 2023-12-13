@@ -62,4 +62,18 @@ class CastleTest
 
         assertEquals("YES", result);
     }
+
+    @Test
+    void test_checkHole_case9()
+    {
+        int a = 1442;
+        int b = 1343;
+        int c = 5959;
+        int d = 268;
+        int e = 8950;
+
+        String result = Castle.checkHole(a, b, c, d, e);
+
+        assertEquals("NO", result);
+    }
 }

@@ -21,11 +21,29 @@ public class Castle
         int ksq2 = b * c;
         int ksq3 = a * c;
         int hsq = d * e;
+        int hmin = Math.min(d, e);
 
-        if (ksq1 <= hsq || ksq2 <= hsq || ksq3 <= hsq) {
-            return "YES";
-        } else {
-            return "NO";
+        if (ksq1 <= hsq) {
+            int kmin = Math.min(a, b);
+            if (kmin <= hmin) {
+                return "YES";
+            }
         }
+
+        if (ksq2 <= hsq) {
+            int kmin = Math.min(b, c);
+            if (kmin <= hmin) {
+                return "YES";
+            }
+        }
+
+        if (ksq3 <= hsq) {
+            int kmin = Math.min(a, c);
+            if (kmin <= hmin) {
+                return "YES";
+            }
+        }
+
+        return "NO";
     }
 }
