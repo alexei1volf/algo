@@ -68,19 +68,26 @@ public class Linear2
             }
         }
 
-        int de = (d * f) - (e * b);
-        int zn = (c * d) - (a * b);
+        int de = f - d * b * e;
+        int zn = c - d * b * a;
         if (zn == 0) {
             zn = 1;
         }
         int x = de / zn;
 
-        de = (a * e) - (c * f);
-        zn = (b * a) - (d * c);
+        de = (f - c * a * e);
+        zn = d - c * a * b;
         if (zn == 0) {
             zn = 1;
         }
         int y = de / zn;
+
+        if (e < 0 && a > b) {
+            x = -x;
+        }
+        if (e < 0 && b > a) {
+            y = -y;
+        }
 
         return new Number[] {2, x, y};
 

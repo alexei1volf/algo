@@ -73,4 +73,20 @@ class Linear2Test
         assertEquals(0.333333, result[2]);
     }
 
+    @Test
+    void test_calcResult_case7()
+    {
+        int a = 1;
+        int b = 2;
+        int c = 3;
+        int d = 4;
+        int e = -1;
+        int f = -1;
+
+        Number[] result = Linear2.calcResult(a, b, c, d, e, f);
+
+        assertEquals(2, result[0]);
+        assertEquals(-1, result[1]);
+        assertEquals(1, result[2]);
+    }
 }
