@@ -1,5 +1,7 @@
 package yandex.lesson1.j.linear2;
 
+import java.text.DecimalFormat;
+import java.text.DecimalFormatSymbols;
 import java.util.Scanner;
 
 public class Linear2
@@ -31,12 +33,6 @@ public class Linear2
 
     public static Number[] calcResult(int a, int b, int c, int d, int e, int f)
     {
-        if (a == b && c == d) {
-            int k = - a / a;
-            int m = e / a;
-            return new Number[] {1, k, m};
-        }
-
         if (a == 0 && c == 0) {
             if (b == 0) {
                 return new Number[] {0};
@@ -51,6 +47,25 @@ public class Linear2
             }
             double x = (double) e / (double) a;
             return new Number[] {3, x};
+        }
+
+        double k1 = (double) -a / (double) b;
+        double m1 = (double) e / (double) b;
+
+        double k2 = (double) - c / (double) d;
+        double m2 = (double) f / (double) d;
+
+        if (k1 == k2 && m1 == m2) {
+            if (k1 % 1 == 0 || m1 % 1 == 0)
+            {
+                int k = Double.valueOf(k1).intValue();
+                int m = Double.valueOf(m1).intValue();
+                return new Number[] {1, k, m};
+            } else {
+                double k = Math.floor(k1 * 1e6) / 1e6;
+                double m = Math.floor(m1 * 1e6) / 1e6;
+                return new Number[] {1, k, m};
+            }
         }
 
         int de = (d * f) - (e * b);
