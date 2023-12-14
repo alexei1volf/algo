@@ -83,10 +83,10 @@ public class Linear2
         int y = de / zn;
 
         if (e < 0 && a > b) {
-            x = -x;
+            y = -y;
         }
         if (e < 0 && b > a) {
-            y = -y;
+            x = -x;
         }
 
         return new Number[] {2, x, y};

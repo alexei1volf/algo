@@ -86,7 +86,7 @@ class Linear2Test
         Number[] result = Linear2.calcResult(a, b, c, d, e, f);
 
         assertEquals(2, result[0]);
-        assertEquals(-1, result[1]);
-        assertEquals(1, result[2]);
+        assertEquals(1, result[1]);
+        assertEquals(-1, result[2]);
     }
 }
