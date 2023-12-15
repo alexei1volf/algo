@@ -33,6 +33,9 @@ public class Linear2
 
     public static Number[] calcResult(int a, int b, int c, int d, int e, int f)
     {
+        if (a == 0 && b == 0 && c == 0 && d == 0 && e ==0 && f == 0) {
+            return new Number[] {5};
+        }
         if (a == 0 && c == 0) {
             if (b == 0) {
                 return new Number[] {0};
