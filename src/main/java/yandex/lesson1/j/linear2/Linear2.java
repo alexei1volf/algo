@@ -11,12 +11,12 @@ public class Linear2
     public static void main(String[] args)
     {
         Scanner sc = new Scanner(System.in);
-        int a = sc.nextInt();
-        int b = sc.nextInt();
-        int c = sc.nextInt();
-        int d = sc.nextInt();
-        int e = sc.nextInt();
-        int f = sc.nextInt();
+        double a = Double.parseDouble(sc.nextLine());
+        double b = Double.parseDouble(sc.nextLine());
+        double c = Double.parseDouble(sc.nextLine());
+        double d = Double.parseDouble(sc.nextLine());
+        double e = Double.parseDouble(sc.nextLine());
+        double f = Double.parseDouble(sc.nextLine());
         Number[] result = calcResult(a, b, c, d, e, f);
         if (result.length == 1) {
             System.out.println(result[0]);
@@ -33,7 +33,7 @@ public class Linear2
 
     }
 
-    public static Number[] calcResult(int a, int b, int c, int d, int e, int f)
+    public static Number[] calcResult(double a, double b, double c, double d, double e, double f)
     {
         if (a == 0 && b == 0 && c == 0 && d == 0 && e ==0 && f == 0) {
             return new Number[] {5};
@@ -50,26 +50,26 @@ public class Linear2
             if (a == 0) {
                 return new Number[] {0};
             }
-            double x = (double) e / (double) a;
+            double x = e / a;
             return new Number[] {3, formatNumber(x)};
         }
 
-        double k1 = (double) -a / (double) b;
-        double m1 = (double) e / (double) b;
+        double k1 = -a / b;
+        double m1 = e / b;
 
-        double k2 = (double) - c / (double) d;
-        double m2 = (double) f / (double) d;
+        double k2 = - c / d;
+        double m2 = f / d;
 
         if (k1 == k2 && m1 == m2) {
             return new Number[] {1, formatNumber(k1), formatNumber(m1)};
         }
 
-        int de = (e * d) - (b * f);
-        int zn = (a * d) - (c * b);
+        double de = (e * d) - (b * f);
+        double zn = (a * d) - (c * b);
         if (zn == 0) {
             return new Number[] {0};
         }
-        double x = (double) de / (double) zn;
+        double x = de / zn;
 
         double y;
         if (d == 0) {
