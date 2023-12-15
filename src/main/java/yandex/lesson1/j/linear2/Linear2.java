@@ -2,11 +2,7 @@ package yandex.lesson1.j.linear2;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
-import java.text.DecimalFormat;
-import java.text.DecimalFormatSymbols;
 import java.util.Scanner;
-
-import static java.lang.Double.NaN;
 
 public class Linear2
 {
@@ -39,35 +35,36 @@ public class Linear2
 
     public static Number[] calcResult(double a, double b, double c, double d, double e, double f)
     {
-        if (a == 0 && b == 0 && c == 0 && d == 0 && e ==0 && f == 0) {
-            return new Number[] {5};
-        }
-        if (a == 0 && c == 0) {
-            if (b == 0 || d == 0) {
-                return new Number[] {0};
-            }
-
-            double y1 = e / b;
-            double y2 = f / d;
-            if (y1 == y2) {
-                return new Number[] {4, formatNumber(y1)};
+        if (a == 0 && b == 0 && c == 0 && d == 0) {
+            if (e == 0 && f == 0) {
+                return new Number[] {5};
             } else {
                 return new Number[] {0};
             }
+        }
 
+        if (a == 0 && c == 0) {
+            double y1 = e / b;
+            double y2 = f / d;
+            if (Double.isNaN(y1)) {
+                return new Number[] {4, formatNumber(y2)};
+            }
+            if (Double.isNaN(y2) || y1 == y2) {
+                return new Number[] {4, formatNumber(y1)};
+            }
+            return new Number[] {0};
         }
 
         if (b == 0 && d == 0) {
-            if (a == 0 || c == 0) {
-                return new Number[] {0};
-            }
             double x1 = e / a;
             double x2 = f / c;
-            if (x1 == x2) {
-                return new Number[] {3, formatNumber(x1)};
-            } else {
-                return new Number[] {0};
+            if (Double.isNaN(x1)) {
+                return new Number[] {3, formatNumber(x2)};
             }
+            if (Double.isNaN(x2) || x1 == x2) {
+                return new Number[] {3, formatNumber(x1)};
+            }
+            return new Number[] {0};
         }
 
         double k1 = -a / b;
