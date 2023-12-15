@@ -17,7 +17,9 @@ public class Linear2
         double d = Double.parseDouble(sc.nextLine());
         double e = Double.parseDouble(sc.nextLine());
         double f = Double.parseDouble(sc.nextLine());
+
         Number[] result = calcResult(a, b, c, d, e, f);
+
         if (result.length == 1) {
             System.out.println(result[0]);
         }
@@ -39,19 +41,31 @@ public class Linear2
             return new Number[] {5};
         }
         if (a == 0 && c == 0) {
-            if (b == 0) {
+            if (b == 0 || d == 0) {
                 return new Number[] {0};
             }
-            double y = (double) e / (double) b;
-            return new Number[] {4, formatNumber(y)};
+
+            double y1 = e / b;
+            double y2 = f / d;
+            if (y1 == y2) {
+                return new Number[] {4, formatNumber(y1)};
+            } else {
+                return new Number[] {0};
+            }
+
         }
 
         if (b == 0 && d == 0) {
-            if (a == 0) {
+            if (a == 0 || c == 0) {
                 return new Number[] {0};
             }
-            double x = e / a;
-            return new Number[] {3, formatNumber(x)};
+            double x1 = e / a;
+            double x2 = f / c;
+            if (x1 == x2) {
+                return new Number[] {3, formatNumber(x1)};
+            } else {
+                return new Number[] {0};
+            }
         }
 
         double k1 = -a / b;
