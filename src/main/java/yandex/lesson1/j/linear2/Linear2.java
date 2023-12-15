@@ -6,6 +6,8 @@ import java.text.DecimalFormat;
 import java.text.DecimalFormatSymbols;
 import java.util.Scanner;
 
+import static java.lang.Double.NaN;
+
 public class Linear2
 {
     public static void main(String[] args)
@@ -73,6 +75,14 @@ public class Linear2
 
         double k2 = - c / d;
         double m2 = f / d;
+
+        if (Double.isNaN(k1) && Double.isNaN(m1)) {
+            return new Number[] {1, formatNumber(k2), formatNumber(m2)};
+        }
+
+        if (Double.isNaN(k2) && Double.isNaN(m2)) {
+            return new Number[] {1, formatNumber(k1), formatNumber(m1)};
+        }
 
         if (k1 == k2 && m1 == m2) {
             return new Number[] {1, formatNumber(k1), formatNumber(m1)};
