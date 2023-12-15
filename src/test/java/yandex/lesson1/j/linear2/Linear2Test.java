@@ -69,8 +69,8 @@ class Linear2Test
         Number[] result = Linear2.calcResult(a, b, c, d, e, f);
 
         assertEquals(1, result[0]);
-        assertEquals(-0.666667, result[1]);
-        assertEquals(0.333333, result[2]);
+        assertEquals(-0.66667, result[1]);
+        assertEquals(0.33333, result[2]);
     }
 
     @Test
@@ -135,5 +135,22 @@ class Linear2Test
         Number[] result = Linear2.calcResult(a, b, c, d, e, f);
 
         assertEquals(0, result[0]);
+    }
+
+    @Test
+    void test_calcResult_case14()
+    {
+        int a = 8;
+        int b = -3;
+        int c = 2;
+        int d = -3;
+        int e = -5;
+        int f = 6;
+
+        Number[] result = Linear2.calcResult(a, b, c, d, e, f);
+
+        assertEquals(2, result[0]);
+        assertEquals(-1.83333, result[1]);
+        assertEquals(-3.22222, result[2]);
     }
 }

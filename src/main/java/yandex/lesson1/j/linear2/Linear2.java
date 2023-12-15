@@ -1,5 +1,7 @@
 package yandex.lesson1.j.linear2;
 
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.text.DecimalFormat;
 import java.text.DecimalFormatSymbols;
 import java.util.Scanner;
@@ -41,7 +43,7 @@ public class Linear2
                 return new Number[] {0};
             }
             double y = (double) e / (double) b;
-            return new Number[] {4, y};
+            return new Number[] {4, formatNumber(y)};
         }
 
         if (b == 0 && d == 0) {
@@ -49,7 +51,7 @@ public class Linear2
                 return new Number[] {0};
             }
             double x = (double) e / (double) a;
-            return new Number[] {3, x};
+            return new Number[] {3, formatNumber(x)};
         }
 
         double k1 = (double) -a / (double) b;
@@ -59,16 +61,7 @@ public class Linear2
         double m2 = (double) f / (double) d;
 
         if (k1 == k2 && m1 == m2) {
-            if (k1 % 1 == 0 || m1 % 1 == 0)
-            {
-                int k = Double.valueOf(k1).intValue();
-                int m = Double.valueOf(m1).intValue();
-                return new Number[] {1, k, m};
-            } else {
-                double k = Math.floor(k1 * 1e6) / 1e6;
-                double m = Math.floor(m1 * 1e6) / 1e6;
-                return new Number[] {1, k, m};
-            }
+            return new Number[] {1, formatNumber(k1), formatNumber(m1)};
         }
 
 
@@ -77,10 +70,21 @@ public class Linear2
         if (zn == 0) {
             return new Number[] {0};
         }
-        int x = de / zn;
-        int y = (f - (c * x)) / d;
+        double x = (double) de / (double) zn;
+        double y = (f - (c * x)) / d;
 
-        return new Number[] {2, x, y};
+        return new Number[] {2, formatNumber(x), formatNumber(y)};
 
+    }
+
+    public static Number formatNumber(Number number) {
+        if (number.doubleValue() % 1 == 0)
+        {
+            return number.intValue();
+        } else {
+            BigDecimal instance = BigDecimal.valueOf(number.doubleValue());
+            instance = instance.setScale(5, RoundingMode.HALF_UP);
+            return instance.doubleValue();
+        }
     }
 }
