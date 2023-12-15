@@ -64,14 +64,19 @@ public class Linear2
             return new Number[] {1, formatNumber(k1), formatNumber(m1)};
         }
 
-
         int de = (e * d) - (b * f);
         int zn = (a * d) - (c * b);
         if (zn == 0) {
             return new Number[] {0};
         }
         double x = (double) de / (double) zn;
-        double y = (f - (c * x)) / d;
+
+        double y;
+        if (d == 0) {
+            y = (e - (a * x)) / b;
+        } else {
+            y = (f - (c * x)) / d;
+        }
 
         return new Number[] {2, formatNumber(x), formatNumber(y)};
 
