@@ -121,4 +121,19 @@ class Linear2Test
 
         assertEquals(5, result[0]);
     }
+
+    @Test
+    void test_calcResult_case11()
+    {
+        int a = 2;
+        int b = 3;
+        int c = 4;
+        int d = 6;
+        int e = 1;
+        int f = 1;
+
+        Number[] result = Linear2.calcResult(a, b, c, d, e, f);
+
+        assertEquals(0, result[0]);
+    }
 }

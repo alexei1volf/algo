@@ -71,7 +71,13 @@ public class Linear2
             }
         }
 
-        int x = ((e * d) - (b * f)) / ((a * d) - (c * b));
+
+        int de = (e * d) - (b * f);
+        int zn = (a * d) - (c * b);
+        if (zn == 0) {
+            return new Number[] {0};
+        }
+        int x = de / zn;
         int y = (f - (c * x)) / d;
 
         return new Number[] {2, x, y};
